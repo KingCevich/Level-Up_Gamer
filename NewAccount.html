@@ -9,12 +9,16 @@
 
     <!--JS-->
     <script>
-         function validarEmail() {
+         function Validaciones() {
             var email = document.getElementById('exampleInputEmail2').value
             var reg = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
             var valido = reg.test(email);
             if(valido==true){
                 alert("Correo valido");
+
+                if(email.endsWith("@duoc.cl")){
+                    alert("Cuenta Duoc detectada. 20% de descuento activa!");
+                }
             }else{
                 alert("Correo Invalido");
         }
@@ -97,7 +101,7 @@
                         <li ><a href="login.html">Ya tienes una cuenta</a></li>
                     </ul>
             </div>
-            <button type="submit" class="btn btn-primary" onclick="validarEmail()">Crear</button>
+            <button type="submit" class="btn btn-primary" onclick="Validaciones()">Crear</button>
         </form>
     </div>
 
