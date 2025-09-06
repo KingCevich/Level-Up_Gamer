@@ -9,20 +9,23 @@
 
     <!--JS-->
     <script>
-         function Validaciones() {
+        function Validaciones() {
             var email = document.getElementById('exampleInputEmail2').value
             var reg = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
             var valido = reg.test(email);
             if(valido==true){
                 alert("Correo valido");
 
-                if(email.endsWith("@duoc.cl")){
+                if(email.endsWith("@duocuc.cl")){
                     alert("Cuenta Duoc detectada. 20% de descuento activa!");
                 }
             }else{
                 alert("Correo Invalido");
+            }
         }
-    }
+        function ojito(){
+            
+        }  
     </script>
 
     <!--CSS-->
@@ -69,14 +72,19 @@
                 <div id="emailHelp" class="form-text">Nunca compartiremos tu correo o información personal y si eres parte de DuocUC ingresa con
                     tu correo para obtener un 20% de descuentos en todos nuestros productos.</div>
             </div>
+            
             <div class="mb-3">
                 <label for="InputPassword2" class="form-label">Contraseña:</label>
-                <input type="password" class="form-control" id="InputPassword2" aria-describedby="passwordHelpInline" required>
+                <div style="display:flex; align-items:center; width:50%;">
+                    <input type="password" class="form-control w-50" id="InputPassword2" aria-describedby="passwordHelpInline" required>
+                    <img src="assets/fotos/ocultar.png" id="coniconMostrar" class="icon" height="30px" style="margin:5px; cursor:pointer;" pointer onclick="COS()">
+                </div>
                 <div id="passwordHelpBlock" class="form-text">Condicion contraseña</div>
             </div>
             <div class="mb-3">
                 <label for="InputPassword2.1" class="form-label">Confirmar contraseña:</label>
                 <input type="password" class="form-control" id="InputPassword2.1" required>
+                
             </div>
             <div class="mb-3">
                 <label for="InputBday1" class="form-label">Fecha de nacimiento</label>
