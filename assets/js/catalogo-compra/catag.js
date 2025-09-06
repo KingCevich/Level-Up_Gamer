@@ -32,4 +32,6 @@ $(document).ready(function(){
                 $('.producto-item').css('transform','scale(1)');
             }setTimeout(showAll,200);
     });
+
+
 });

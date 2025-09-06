@@ -12,6 +12,18 @@
     <!--JAVASCRIPT-->
     <script src="assets/js/jquery-3.7.1.js"></script>
     <script src="assets/js/catalogo/catag.js"></script>
+    <script src="assets/js/catalogo-compra/search_bar.js"></script>
+
+    <style>
+#no-result {
+  display: none;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
+  color: #000000;
+  font-weight: bold;
+}
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-light">
@@ -53,6 +65,10 @@
     <section>
         <div>
         <h2>Tienda</h2>
+            <div>
+                <input type="text" name="buscador" id="buscador" placeholder="Buscar">
+            </div>
+
             <div class="categoria-body">
                 <div class="lista-categoria">
                     <a href="#" class="categorias" category="all">Todo</a>
@@ -67,58 +83,69 @@
                     <a href="#" class="categorias" category="polerones">Polerones Gamers Personalizados</a>
                 </div>
 
+                <div id="no-result">No se encontro el producto</div>
+
                 <div class="productos"> 
                     <div class="producto-item" category="juegos-Mesa">
                         <img src="">
-                        <a href="">nombre1 - precio</a>
+                        <a href="" class="nombre">nombre1</a>
+                        <h4>precio</h4>
                         <button>Agregar al carrito</button>
                     </div>
 
                     <div class="producto-item" category="accesorios">
                         <img src="">
-                        <a href="">nombre2 - precio</a>
+                        <a href="" class="nombre">nombre2</a>
+                        <h4>precio</h4>
                         <button>Agregar al carrito</button>
                     </div>
 
                     <div class="producto-item" category="consolas">
                         <img src="">
-                        <a href="">nombre3 - precio</a>
+                        <a href="" class="nombre">nombre3</a>
+                        <h4>precio</h4>
                         <button>Agregar al carrito</button>
                     </div>
 
                     <div class="producto-item" category="computadores">
                         <img src="">
-                        <a href="">nombre4 - precio</a>
+                        <a href="" class="nombre">nombre4</a>
+                        <h4>precio</h4>
                         <button>Agregar al carrito</button>
                     </div>
 
                     <div class="producto-item" category="sillas">
                         <img src="">
-                        <a href="">nombre5 - precio</a>
+                        <a href="" class="nombre">nombre5</a>
+                        <h4>precio</h4>
                         <button>Agregar al carrito</button>
                     </div>
 
                     <div class="producto-item" category="mouse">
                         <img src="">
-                        <a href="">nombre6 - precio</a>
+                        <a href="" class="nombre">nombre6</a>
+                        <h4>precio</h4>
                         <button>Agregar al carrito</button>
                     </div>
 
                     <div class="producto-item" category="mousepad">
                         <img src="">
-                        <a href="">nombre7 - precio</a>
+                        <a href="" class="nombre">nombre7</a>
+                        <h4>precio</h4>
                         <button>Agregar al carrito</button>
                     </div>
 
                     <div class="producto-item" category="poleras">
                         <img src="">
-                        <a href="">nombre8 - precio</a>
+                        <a href="" class="nombre">nombre8</a>
+                        <h4>precio</h4>
                         <button>Agregar al carrito</button>
                     </div>
 
                     <div class="producto-item" category="polerones">
                         <img src="">
-                        <a href="">nombre9 - precio</a>
+                        <a href="" class="nombre">nombre9</a>
+                        <h4>precio</h4>
                         <button>Agregar al carrito</button>
                     </div>
                 </div>
