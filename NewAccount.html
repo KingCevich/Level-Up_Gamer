@@ -10,7 +10,8 @@
     <!--JS-->
     <script>
         function Validaciones() {
-            var email = document.getElementById('exampleInputEmail2').value
+            //Correo
+            var email = document.getElementById('exampleInputEmail2').value;
             var reg = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
             var valido = reg.test(email);
             if(valido==true){
@@ -18,13 +19,48 @@
 
                 if(email.endsWith("@duocuc.cl")){
                     alert("Cuenta Duoc detectada. 20% de descuento activa!");
+                    DescDuoc = precio * 0.2
                 }
             }else{
                 alert("Correo Invalido");
             }
+            //Fecha nacimiento
+            var cumple = new Date(document.getElementById("FechNac").value);
+            var acty = new Date();
+            var edad = acty.getFullYear() - cumple.getFullYear();
+            var actm = acty.getMonth() - cumple.getMonth();
+            if (actm < 0 || (actm === 0 && acty.getDate() < cumple.getDate())) {
+            edad--;
+            }
+
+            if(edad >= 18){
+                alert("eres mayor de edad");
+                return;
+
+                if (acty.getDate==cumple.getDate & acty.getDate==cumple.getDate){
+                    alert("Feliz Cumpleaños! ten x puntos")
+                    puntos=+1
+                }
+
+            }else{
+                alert("no eres mayor");
+                return;
+            }
         }
+        
+        let flag = true;
         function ojito(){
-            
+            //ocultar o mostrar ojo contraseña
+            if(flag){
+                document.getElementById("InputPassword2").type = "password";
+                document.getElementById("coniconMostrar").src ="assets/fotos/ocultar.png";
+                flag=false;
+
+            }else{
+                document.getElementById("InputPassword2").type = "text";
+                document.getElementById("coniconMostrar").src = "assets/fotos/mostrar.png";
+                flag=true;
+            } 
         }  
     </script>
 
@@ -77,7 +113,7 @@
                 <label for="InputPassword2" class="form-label">Contraseña:</label>
                 <div style="display:flex; align-items:center; width:50%;">
                     <input type="password" class="form-control w-50" id="InputPassword2" aria-describedby="passwordHelpInline" required>
-                    <img src="assets/fotos/ocultar.png" id="coniconMostrar" class="icon" height="30px" style="margin:5px; cursor:pointer;" pointer onclick="COS()">
+                    <img src="assets/fotos/ocultar.png" id="coniconMostrar" class="icon" height="30px" style="margin:5px; cursor:pointer;" pointer onclick="ojito()">
                 </div>
                 <div id="passwordHelpBlock" class="form-text">Condicion contraseña</div>
             </div>
@@ -88,7 +124,7 @@
             </div>
             <div class="mb-3">
                 <label for="InputBday1" class="form-label">Fecha de nacimiento</label>
-                <input type="date" name="bday" aria-describedby="bdayHelp" required max="2017-04-30"> <!--SACAR LA FECHA CON JAVASCIPT-->
+                <input type="date" name="bday" id="FechNac" aria-describedby="bdayHelp" required max="2017-04-30"> <!--SACAR LA FECHA CON JAVASCIPT-->
                 <div id="bdayHelp" class="form-text">Para obtener puntos LevelUp en tu cumpleaños ✨</div>
                 <div id="bdayHelp" class="form-text">Solo mayores de 18 años.</div>
             </div>
