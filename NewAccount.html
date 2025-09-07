@@ -10,20 +10,52 @@
     <!--JS-->
     <script>
         function Validaciones() {
+            
             //Correo
             var email = document.getElementById('exampleInputEmail2').value;
             var reg = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
             var valido = reg.test(email);
             if(valido==true){
                 alert("Correo valido");
+                return true;
 
-                if(email.endsWith("@duocuc.cl")){
-                    alert("Cuenta Duoc detectada. 20% de descuento activa!");
-                    DescDuoc = precio * 0.2
-                }
+
+
             }else{
                 alert("Correo Invalido");
+                return false;
+                
             }
+
+            if(email.endsWith("@duocuc.cl")){
+                alert("Cuenta Duoc detectada. 20% de descuento activa!");
+                DescDuoc = precio * 0.2;
+            }
+
+            
+            //validacion contraseña
+            var contra = document.getElementById('InputPassword2').value;
+            var regpass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&#]{8,15}/;
+            var validpass = regpass.test(contra);
+
+            if(validpass==true){
+                alert("Contraseña segura");
+                
+                
+            }else{
+                alert("La Contraseña no cumple con los requisitos");
+                return false;
+                
+            }
+
+            var confipass = document.getElementById('InputPassword2.1').value;
+
+            if(confipass!==contra){
+                alert("Confirmacion Invalida");
+                return false;
+                
+            }
+
             //Fecha nacimiento
             var cumple = new Date(document.getElementById("FechNac").value);
             var acty = new Date();
@@ -33,20 +65,31 @@
             edad--;
             }
 
+            if(cumple.getFullYear < "1900"){
+                alert("Ingrese fecha valida");
+                return false;
+                
+            }
+
             if(edad >= 18){
                 alert("eres mayor de edad");
-                return;
+                
+                
 
                 if (acty.getDate==cumple.getDate & acty.getDate==cumple.getDate){
-                    alert("Feliz Cumpleaños! ten x puntos")
+                    alert("Feliz Cumpleaños! ten x puntos");
                     puntos=+1
+                    
                 }
 
             }else{
                 alert("no eres mayor");
-                return;
+                return false;
+                
             }
-        }
+
+
+        } 
         
         let flag = true;
         function ojito(){
@@ -107,6 +150,7 @@
                 <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" required>
                 <div id="emailHelp" class="form-text">Nunca compartiremos tu correo o información personal y si eres parte de DuocUC ingresa con
                     tu correo para obtener un 20% de descuentos en todos nuestros productos.</div>
+                
             </div>
             
             <div class="mb-3">
@@ -115,11 +159,13 @@
                     <input type="password" class="form-control w-50" id="InputPassword2" aria-describedby="passwordHelpInline" required>
                     <img src="assets/fotos/ocultar.png" id="coniconMostrar" class="icon" height="30px" style="margin:5px; cursor:pointer;" pointer onclick="ojito()">
                 </div>
-                <div id="passwordHelpBlock" class="form-text">Condicion contraseña</div>
+                <div id="passwordHelpBlock" class="form-text">Condicion contraseña: La Contraseña debe tener almenos entre 8 y 15 caracteres, Una letra minuscula, mayuscula, Un Numero, y un caracter especial: $ @ ! % * ? &</div>
+                
             </div>
             <div class="mb-3">
                 <label for="InputPassword2.1" class="form-label">Confirmar contraseña:</label>
                 <input type="password" class="form-control" id="InputPassword2.1" required>
+                
                 
             </div>
             <div class="mb-3">
@@ -127,6 +173,7 @@
                 <input type="date" name="bday" id="FechNac" aria-describedby="bdayHelp" required max="2017-04-30"> <!--SACAR LA FECHA CON JAVASCIPT-->
                 <div id="bdayHelp" class="form-text">Para obtener puntos LevelUp en tu cumpleaños ✨</div>
                 <div id="bdayHelp" class="form-text">Solo mayores de 18 años.</div>
+                
             </div>
             <div class="row g-3 align-items-center">
                 <div class="col-auto">
