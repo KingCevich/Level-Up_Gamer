@@ -24,7 +24,7 @@
 
 /*GENERAL*/
 body {
-    font-family: var(--FtextoPrincipal) sans-serif;
+    font-family: var(--FtextoPrincipal) ,sans-serif;
     background-image: var(--fondo-p);
     background-attachment: fixed;
     background-size: auto;
@@ -102,123 +102,146 @@ p,li, a{
 
 
 /* CATALOGO */
-#resultado {
+#resultado{
     display: none;
-    font-size: 1.2rem;
+    font-size: 19px;
     color: var(--Cacento2);
     text-align: center;
     margin: 30px 0;
     font-weight: bold;
 }
 
-.catalogo-buscador {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-}
-
-#buscador {
-    width: 100%;
-    max-width: 500px;
-    padding: 12px 15px;
-    border-radius: 12px;
-    border: 2px solid #222;
-    background-color: #111;
-    color: var(--CtextoPrincipal);
-    box-shadow: inset 0 0 5px #000;
-    font-family: var(--FtextoPrincipal);
-    font-size: 1rem;
-}
-
-.catalogo {
+.catalogo{
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
-.catalogo h1 {
+.catalogo h1{
     font-family: var(--FtextoEncabezado);
     text-shadow: 0 0 4px var(--Cacento2);
     margin-bottom: 20px;
     text-align: center;
 }
 
-.productos {
+.catalogo-busacador{
+    position: relative;
+    max-width: 600px; 
+    width: 100%;     
+    margin: 20px auto; 
+}
+
+.catalogo-busacador input, #buscador{
+    width: 100%;
+    padding: 12px 40px;
+    font-size: 16px;
+    border-radius: 25px;
+    border: 2px solid var(--CtextoPrincipal);
+    background: #111;
+    color: var(--CtextoPrincipal);
+    outline: none;
+    transition: all 0.3s;
+}
+
+.catalogo-busacador input:focus{
+    border-color: var(--Cacento2);
+    box-shadow: 0 0 6px var(--Cacento2);
+}
+
+.catalogo-busacador .icono-buscar{
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--CtextoSecundario);
+    font-size: 19px;
+    pointer-events: none;
+}
+
+.lista-categoria .categorias{
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 5px;
+    border: 2px solid var(--CtextoPrincipal);
+    border-radius: 20px;  
+    color: var(--CtextoPrincipal);
+    text-decoration: none;
+    transition: color 0.3s;
+    font-weight: bold;
+}
+
+.lista-categoria .categorias:hover .lista-categoria
+.ct_item-active{
+    border-color: var(--Cacento2);
+    text-shadow: 0 0 3px var(--Cacento2);
+}
+
+.productos{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
     margin-top: 40px;
 }
 
-.producto-item {
+.producto-item{
     background: linear-gradient(145deg, #111, #1a1a1a);
     border-radius: 15px;
     padding: 15px;
     text-align: center;
     box-shadow: 0 0 15px rgba(0,0,0,0.7);
-    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    transition: transform 0.3s;
 }
 
-.producto-item:hover {
+.producto-item:hover{
     transform: translateY(-5px);
-    box-shadow: 0 0 25px var(--Cacento2);
+    box-shadow: 0 0 8px var(--Cacento2);
     background: linear-gradient(145deg, #1a1a1a, #222);
 }
 
-.producto-item .producto-img img {
+.producto-item .producto-img img{
     width: 100%;
     border-radius: 12px;
-    transition: transform 0.3s, filter 0.3s;
+    transition: transform 0.3s;
 }
 
-.producto-item .producto-img img:hover {
+.producto-item .producto-img img:hover{
     transform: scale(1.05);
-    filter: drop-shadow(0 0 10px var(--Cacento2));
+    filter: drop-shadow(0 0 3px var(--Cacento2));
 }
 
-.producto-item .nombre {
+.producto-item .nombre{
     font-family: var(--FtextoEncabezado);
     color: var(--CtextoPrincipal);
     display: block;
     margin: 10px 0;
     text-decoration: none;
-    transition: color 0.3s, text-shadow 0.3s;
+    transition: color 0.3s;
 }
 
-.producto-item .nombre:hover {
-    color: var(--Cacento2);
-    text-shadow: 0 0 5px var(--Cacento2);
+.producto-item .nombre:hover{
+    text-shadow: 0 0 3px var(--Cacento2);
 }
 
-.producto-item h4 {
+.producto-item h4{
     font-family: var(--FtextoPrincipal);
     color: var(--CtextoSecundario);
     margin-bottom: 12px;
 }
 
-.producto-item button {
+.producto-item button{
     padding: 10px 15px;
     background-color: var(--Cacento1);
-    color: #000;
+    color: #ffffff;
+    font:bold var(--FtextoPrincipal) ,sans-serif;
     border: none;
     border-radius: 12px;
-    font-weight: bold;
     cursor: pointer;
     transition: all 0.3s;
 }
 
-.producto-item button:hover {
-    background-color: var(--Cacento2);
-    box-shadow: 0 0 10px var(--Cacento2);
-    transform: scale(1.05);
+.producto-item button:hover{
+    transform: scale(1);
 }
-
-
-
-
-
-
-
 
 
 /* FORMULARIO */
@@ -235,7 +258,7 @@ form {
 }
 
 form label {
-    font-family: var(--FtextoEncabezado) sans-serif;
+    font-family: var(--FtextoEncabezado) ,sans-serif;
     color: var(--CtextoPrincipal);
     text-shadow: var(--Cacento2) 0px 0px 1px;
     margin-bottom: 8px;
@@ -243,7 +266,7 @@ form label {
 }
 
 form input {
-    font-style: var(--FtextoPrincipal) sans-serif;
+    font-style: var(--FtextoPrincipal) ,sans-serif;
     width: 100%;
     padding: 12px;
     margin-bottom: 25px;
@@ -263,7 +286,7 @@ form input:focus {
 form button { /*** revisar**/
     width: 100%;
     padding: 15px;
-    font-family: var(--FtextoEncabezado) sans-serif;
+    font-family: var(--FtextoEncabezado) ,sans-serif;
     font-weight: bold;
     background-color: var(--Cacento2);
     border: none;
@@ -299,10 +322,6 @@ form a:hover {
     text-decoration: underline; /**** probar ::before*/
     text-shadow: 0 0 3px var(--Cacento1);
 }
-
-
-
-
 
 /* NOSOTROS */
 #nosotros{
@@ -341,7 +360,7 @@ form a:hover {
 }
 
 .contenido p{
-    font-style: var(--FtextoPrincipal) sans-serif;
+    font-style: var(--FtextoPrincipal) ,sans-serif;
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -387,7 +406,7 @@ footer .footer-container {
 }
 
 .footer-title {
-    font-family: var(--FtextoEncabezado) sans-serif;
+    font-family: var(--FtextoEncabezado) ,sans-serif;
     color: var(--CtextoPrincipal);
     margin-bottom: 15px;
     text-shadow: 0 0 3px var(--Cacento2);
