@@ -20,6 +20,7 @@ function Validaciones() {
 
             if(duoc){
                 alert("Cuenta Duoc detectada");
+                
                 }
 
             
