@@ -1,6 +1,7 @@
 function Validaciones() {
             
             
+            
             //Correo
             var email = document.getElementById('exampleInputEmail2').value;
             var reg = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
@@ -10,16 +11,16 @@ function Validaciones() {
             if(valido==true){
                 //alert("Correo valido");
                 
-                if(duoc){
-                alert("Cuenta Duoc detectada");
-                }
+
 
             }else{
                 alert("Correo Invalido");
                 
             }
 
-            
+            if(duoc){
+                alert("Cuenta Duoc detectada");
+                }
 
             
             //validacion contraseña
@@ -61,16 +62,17 @@ function Validaciones() {
                 edad = true;
                 
 
-                if (acty.getDate() ==cumple.getDate() && acty.getDate() ==cumple.getDate() ){ //Cambiar el wtf is that
-                    alert("Feliz Cumpleaños! ten x puntos");
-                    puntos=+1
-                    
-                }
-
             }else{
                 alert("Tiene que ser mayor de edad");
-                
+  
             }
+
+             if (acty.getDate() ==cumple.getDate() && acty.getDate() ==cumple.getDate() ){ //Cambiar el wtf is that
+                 alert("Feliz Cumpleaños! ten x puntos");
+                 puntos=+1 
+                }else{
+
+                }
 
             var si = valido && validpass && validConfipass && edad;
 
@@ -88,18 +90,7 @@ function Validaciones() {
 
         } 
     
-    let flag = true;
-    function ojito(){
-        //ocultar o mostrar ojo contraseña
-        if(flag){
-                document.getElementById("InputPassword2").type = "password";
-                document.getElementById("coniconMostrar").src ="assets/fotos/ocultar.png";
-                flag=false;
+        
 
-        }else{
-                document.getElementById("InputPassword2").type = "text";
-                document.getElementById("coniconMostrar").src = "assets/fotos/mostrar.png";
-                flag=true;
-        } 
-    }
-  
+
+
