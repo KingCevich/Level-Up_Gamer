@@ -60,9 +60,8 @@ function Validaciones() {
                 //alert("eres mayor de edad");
                 edad = true;
                 
-                
 
-                if (acty.getDate() ==cumple.getDate() && acty.getDate() ==cumple.getDate() ){
+                if (acty.getDate() ==cumple.getDate() && acty.getDate() ==cumple.getDate() ){ //Cambiar el wtf is that
                     alert("Feliz Cumpleaños! ten x puntos");
                     puntos=+1
                     
@@ -89,17 +88,4 @@ function Validaciones() {
 
         } 
         
-        let flag = true;
-        function ojito(){
-            //ocultar o mostrar ojo contraseña
-            if(flag){
-                document.getElementById("InputPassword2").type = "password";
-                document.getElementById("coniconMostrar").src ="assets/fotos/ocultar.png";
-                flag=false;
-
-            }else{
-                document.getElementById("InputPassword2").type = "text";
-                document.getElementById("coniconMostrar").src = "assets/fotos/mostrar.png";
-                flag=true;
-            } 
-        }  
+  
