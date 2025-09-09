@@ -108,9 +108,8 @@ p,li, a{
 
 .hero {
     height: 400px;
-    background-image: 
-        linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 100%),
-        url('assets/fotos/hero.jpg');
+    background-image:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("../assets/fotos/banner.jpg");
     background-position: center;  
     background-size: cover;       
     background-repeat: no-repeat;
@@ -1513,11 +1512,10 @@ form a:hover {
 .blog-fecha img {
     border-radius: 8px;
     box-shadow: 0 0 2px #111;
-    width: 60px;
-    height: 80px;
+    width: auto;
+    height: 100px;
     object-fit: cover;
 }
-
 
 
 /* FOOTER */
