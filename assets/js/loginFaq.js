@@ -7,11 +7,11 @@ function loginFaq(){
     };
 
     if(email == userFaq.emailFaq && contra == userFaq.contraFaq){
-        alert("Loguin Correcto, Bienvenido!");  
+        alert("Login Correcto, Bienvenido!");  
         return true;
         
     }else{
-        alert("Loguin Incorrecto");
+        alert("Login Incorrecto");
         return false;
         
         
